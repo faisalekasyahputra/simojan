@@ -1,15 +1,15 @@
-<div class="container-fluid p-0" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">>
-    <div class="container-fluid d-flex align-items-top justify-content-center p-0" style="min-height: calc(100vh - 100px); margin-top:-50px;">
-        <div class="row m-auto align-items-center">
+<div class="container-fluid p-0 text-white" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+    <div class="container-fluid d-flex align-items-top justify-content-center p-0" style="min-height: calc(100vh - 100px); ">
+        <div class="row m-auto align-items-center glass p-3 rounded">
             <div class="col border-end border-1">
-                <a class="nav-link" href="<?= base_url('index.php') ?>"><i class="fa fa-arrow-left mx-2" aria-hidden="true"></i> Kembali ke beranda</a>
-                <img class="img-thumbnail border border-0" src="<?= base_url('assets/img/_9254fe58-3dfb-461b-87f4-638ad02f3cbc.jfif') ?>" alt="" width="500px">
+                <a class="nav-link mb-3" href="<?= base_url('index.php') ?>"><i class="fa fa-arrow-left mx-2" aria-hidden="true"></i> Kembali ke beranda</a>
+                <img class="img-thumbnail border border-0" src="<?= base_url('assets/img/bg.jpeg') ?>" alt="" width="600px">
             </div>
 
             <div class="col">
 
                 <form>
-                    <img class=" mb-3" src="<?= base_url('assets/img/logo_text.png') ?>" alt="" width="100px">
+                    <img class=" mb-3" src="<?= base_url('assets/img/logot.svg') ?>" alt="" width="100px">
                     <h1 class="h5 mb-3 fw-normal">Masuk Admin</h1>
 
                     <div class="form-floating m-2">

@@ -11,7 +11,7 @@
 
 <body class="overflow-x-hidden bg-dark">
 	<?php include "layouts/nav.php" ?>
-	<div class=" px-3 px-md-5" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+	<div class=" px-3 px-md-5 text-white" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 		<div class="archives mx-auto mb-5 h-100 d-flex flex-column">
 			<h1 class="page-title h4 my-3 m-auto">Data Titik Lampu Kabupaten Kotawaringin Barat</h1>
 			<div class="card">
@@ -98,8 +98,8 @@
 												<b>Jenis Lampu</b> : <?= $pj->Jenis_Bohlam ?> / <b>Letak Tiang</b> : <?= $pj->Letak_Tiang ?> <br>
 												<b>Kondisi Tiang</b> : <?= $pj->Kondisi_Tiang ?> /
 												<b>Jenis Jaringan</b> :<?= $pj->Jenis_Jringan ?><br>
-												<a href="<?= base_url('index.php/Welcome/detail/') . $pj->Kode ?>" class="btn btn-sm btn-link p-0 mt-2 btnMap text-danger">
-													<i class="fa fa-map-marker" aria-hidden="true"></i>
+												<a class="link-underline link-underline-opacity-0" href="<?= base_url('index.php/Welcome/detail/') . $pj->Kode ?>" class="btn btn-sm btn-link p-0 mt-2 btnMap text-danger">
+													<i class="fa fa-map-marker " aria-hidden="true"></i>
 													Lihat Lokasi (<?= number_format($pj->LAT, 5) ?>, <?= number_format($pj->LONG, 5) ?>)
 												</a>
 											</td>
