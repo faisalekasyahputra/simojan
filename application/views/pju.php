@@ -9,7 +9,7 @@
 	<?php include "layouts/header.php" ?>
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-dark">
 	<?php include "layouts/nav.php" ?>
 	<div class=" px-3 px-md-5" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="900" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 		<div class="archives mx-auto mb-5 h-100 d-flex flex-column">
@@ -65,9 +65,9 @@
 								</select>
 							</div>
 
-							
-							
-							
+
+
+
 						</div>
 						<div class="form-group p-2 ps-0">
 							<button type="submit" class="btn btn-block btn-primary w-100">Filter Data</button>
@@ -76,7 +76,7 @@
 
 					<div class="box-body table-responsive mt-3 rounded-3 overflow-hidden">
 						<table id="tabeldetail" class="table table-bordered overflow-none table-hover table-condensed mb-0 border border-1" style="font-size: small;">
-							<thead class="thead-light" >
+							<thead class="thead-light">
 								<tr>
 									<th style="width: 5%">No</th>
 									<th>Titik Lampu</th>
@@ -124,25 +124,24 @@
 </body>
 <script>
 	function sortSelect(selElem) {
-  var tmpAry = new Array();
-  for (var i=0;i<selElem.options.length;i++) {
-    tmpAry[i] = new Array();
-    tmpAry[i][0] = selElem.options[i].text;
-    tmpAry[i][1] = selElem.options[i].value;
-  }
-  tmpAry.sort();
-  while (selElem.options.length > 0) {
-    selElem.options[0] = null;
-  }
-  for (var i=0;i<tmpAry.length;i++) {
-    var op = new Option(tmpAry[i][0], tmpAry[i][1]);
-    selElem.options[i] = op;
-  }
-  return;
-}
+		var tmpAry = new Array();
+		for (var i = 0; i < selElem.options.length; i++) {
+			tmpAry[i] = new Array();
+			tmpAry[i][0] = selElem.options[i].text;
+			tmpAry[i][1] = selElem.options[i].value;
+		}
+		tmpAry.sort();
+		while (selElem.options.length > 0) {
+			selElem.options[0] = null;
+		}
+		for (var i = 0; i < tmpAry.length; i++) {
+			var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+			selElem.options[i] = op;
+		}
+		return;
+	}
 
-sortSelect(document.getElementById('#idkecamatan'));
-
+	sortSelect(document.getElementById('#idkecamatan'));
 </script>
 
 </html>

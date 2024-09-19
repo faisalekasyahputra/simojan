@@ -8,7 +8,7 @@
   <?php include "layouts/header.php" ?>
 </head>
 
-<body class="overflow-x-hidden ">
+<body class="overflow-x-hidden bg-dark">
   <?php include "layouts/nav.php" ?>
   <?= $content ?>
   <?php include "layouts/foot.php" ?>

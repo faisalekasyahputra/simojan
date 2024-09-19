@@ -1,8 +1,8 @@
 <nav id="navtick" class="navbar navbar-expand-lg shadow-sm glass " data-aos="fade-down" data-aos-offset="200" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center" style="z-index: 999;">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url('index.php') ?>">
-            <!-- <img src="<?= base_url('assets/img/logo_text.svg') ?>" alt="logo-pupr" width="150px"> -->
-            SIpetaru logo
+        <a class="navbar-brand p-2" href="<?= base_url('index.php') ?>">
+            <img class="img-fluid object-fit-cover p-1" src="<?= base_url('assets/img/logot.svg') ?>" alt="logo-pupr" width="150px">
+
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,12 +15,12 @@
 
                 <li class=" nav-item px-2">
                     <a class="btn nav-link d-flex align-items-center" aria-current="page" href="<?= base_url('index.php/Welcome/data_pju') ?>" type="button">
-                        <p class="m-0">Data PJU</p></i>
+                        <p class="m-0">Jembatan</p></i>
                     </a>
                 </li>
 
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="<?= base_url('index.php/Welcome/peta') ?>">Peta PJU</a>
+                    <a class="nav-link" href="<?= base_url('index.php/Welcome/peta') ?>">Peta</a>
                 </li>
 
                 <li class=" dropdown d-flex px-2">
@@ -46,7 +46,7 @@
 
                 <li class="nav-item px-2">
                     <a type="button" class="btn btn-primary d-flex align-items-center" href="<?= base_url('index.php/Welcome/masuk') ?>"><i class="fa fa-user-circle me-2" aria-hidden="true"></i>
-                        <p class="m-0 me-2">Masuk</p>
+                        <p class="m-0 me-2">MASUK</p>
                     </a>
                 </li>
 

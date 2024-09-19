@@ -8,7 +8,7 @@
 	<?php include "layouts/header.php" ?>
 </head>
 
-<body class="overflow-x-hidden bg-body-tertiary">
+<body class="overflow-x-hidden bg-dark">
 	<?php include "layouts/nav.php" ?>
 	<div class=" px-3 px-md-5" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 		<div class="archives mx-auto mt-3 mb-5 h-100">
@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-4 d-flex justify-content-end">
 					<div id="pano">
-						<?php $foto = base_url() . 'assets/foto/'.$pju[0]->Dokumentasi ; ?>
+						<?php $foto = base_url() . 'assets/foto/' . $pju[0]->Dokumentasi; ?>
 						<img class="img-thumbnail" src="<?= $foto ?>">
 					</div>
 				</div>
@@ -37,7 +37,7 @@
 						<div class="form-group col">
 							<label for="kecamatan" class="control-label">Nama Ruas :</label>
 							<select class="select form-control" id="idkecamatan" name="kecamatan">
-							<option value=""><?= $pju[0]->Nama_Ruas ?></option>
+								<option value=""><?= $pju[0]->Nama_Ruas ?></option>
 							</select>
 						</div>
 						<div class="form-group col">
@@ -110,36 +110,43 @@
 	</div>
 	<?php include "layouts/foot.php" ?>
 	<script>
-	function marker_nya(feature, latlng) {
-       
-	   var Url_nya = "<?=base_url('assets/ico/lamp1.png')?>";
-	   var Icon = L.icon({iconUrl:Url_nya,iconSize: [50, 50],});
-	   var marker = L.marker(latlng, {icon:Icon});
-	   return marker
-   }
-	var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-		maxZoom: 20,
-		subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-	});
-	var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-        maxZoom: 20,
-        subdomains:['mt0','mt1','mt2','mt3']});
-	var pju_titik = [<?= $peta ?>];
-	var pju = L.geoJSON(pju_titik, {pointToLayer:marker_nya,
-		filter: function(feature, layer) {
-			return feature.properties.show_on_map;
+		function marker_nya(feature, latlng) {
+
+			var Url_nya = "<?= base_url('assets/ico/lamp1.png') ?>";
+			var Icon = L.icon({
+				iconUrl: Url_nya,
+				iconSize: [50, 50],
+			});
+			var marker = L.marker(latlng, {
+				icon: Icon
+			});
+			return marker
 		}
-	});
-	var map = L.map('map', {
-		center: [<?= $pju[0]->LAT ?>, <?= $pju[0]->LONG ?>],
-		zoom: 19,
-		layers: [googleSat, pju],
-		fullscreenControl: true,
-		fullscreenControlOptions: {
-			position: 'topleft'
-		}
-	});
-</script>
+		var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+			maxZoom: 20,
+			subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+		});
+		var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+			maxZoom: 20,
+			subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+		});
+		var pju_titik = [<?= $peta ?>];
+		var pju = L.geoJSON(pju_titik, {
+			pointToLayer: marker_nya,
+			filter: function(feature, layer) {
+				return feature.properties.show_on_map;
+			}
+		});
+		var map = L.map('map', {
+			center: [<?= $pju[0]->LAT ?>, <?= $pju[0]->LONG ?>],
+			zoom: 19,
+			layers: [googleSat, pju],
+			fullscreenControl: true,
+			fullscreenControlOptions: {
+				position: 'topleft'
+			}
+		});
+	</script>
 
 </body>
 

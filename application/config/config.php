@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pju_new/';
+$config['base_url'] = 'http://localhost/simojan/';
 // $config['base_url'] = 'https://monarch-sweet-deadly.ngrok-free.app/pju/';
 
 /*

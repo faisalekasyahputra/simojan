@@ -1,17 +1,17 @@
-<div class="container-fluid p-0 bg-body-tertiary">
+<div class="container-fluid p-0 text-white">
     <div class="container-fluid d-flex align-items-top justify-content-center p-0" style="min-height: calc(100vh - 100px);">
         <div class="row w-100">
-            <div id="sidebar-left" class="col-2  border-end border-1 bg-white " data-aos="fade-right" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+            <div id="sidebar-left" class="col-2  border-end border-1 border-primary " data-aos="fade-right" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
                 <div class="row d-flex ">
-                    <div class="col d-flex justify-content-start border-bottom border-top border-1 p-2 align-items-center">
+                    <div class="col d-flex justify-content-start border-bottom border-top border-primary border-1 p-2 align-items-center">
                         <i class="fa fa-info-circle fs-6 me-2" aria-hidden="true"></i>
-                        <p class="text-capitalize m-0 text-left">Informasi yang ditampilkan</p>
+                        <small class="text-capitalize m-0 text-left">Informasi yang ditampilkan</small>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="row d-flex ">
-                    <div class="col d-flex justify-content-start border-bottom border-top border-1 p-2 align-items-center">
+                    <div class="col d-flex justify-content-start border-bottom border-top border-primary border-1 p-2 align-items-center">
                         <i class="fa fa-adjust me-2 " aria-hidden="true"></i>
                         <p class="text-capitalize m-0 text-left"> Peta Zona</p>
 
@@ -53,55 +53,91 @@
 
 
             </div>
-            <div id="main" class="col p-2 pb-4 bg-body-tertiary" data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+            <div id="main" class="col p-2 " data-aos="fade-up" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 
-                <div id="map" class="rounded p-0 m-0" style="width: 100%; height:100%"></div>
+                <div id="map" class="rounded p-0 m-0 border border-primary" style="width: 100%; height:100%"></div>
 
             </div>
-            <div id="sidebar-right" class="col-2 border-start border-1 bg-white" data-aos="fade-left" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+            <div id="sidebar-right" class="col-2 border-start border-1 border-primary " data-aos="fade-left" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
                 <div class="row d-flex ">
-                    <div class="col d-flex justify-content-center border-bottom border-1 p-2">
-                        <img class="w-50 " src="<?= base_url('assets/img/logo_smkb.png') ?>" alt="">
+                    <div class="col d-flex justify-content-center border-bottom border-1 p-2 border-primary">
+                        <img class="w-50 " src="<?= base_url('assets/img/logo.png') ?>" alt="">
                     </div>
 
                 </div>
                 <div class="row d-flex ">
-                    <div class="col d-flex justify-content-center border-bottom border-1 p-2">
-                        <p class="text-capitalize m-0 text-center"> sistem informasi penerangan jalan umum</p>
+                    <div class="col d-flex justify-content-center border-bottom border-1 p-2 border-primary">
+                        <p class="text-capitalize m-0 text-center"> sistem informasi Monitoring jembatan</p>
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="list-group flush my-2">
+                            <a href="#" class="list-group-item list-group-item-action">
+
+
+                                <i class="fa fa-lightbulb-o me-2" aria-hidden="true"></i> Zona A
+
+
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+
+                                <i class="fa fa-lightbulb-o me-2" aria-hidden="true"></i> Zona B
+
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+
+                                <i class="fa fa-lightbulb-o me-2" aria-hidden="true"></i> Zona C
+
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+
+                                <i class="fa fa-lightbulb-o me-2" aria-hidden="true"></i> Zona D
+
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary mb-2 w-100" href="#"><i class="fa fa-recycle me-2" aria-hidden="true"></i> Reload</button>
+
+
+
+
             </div>
         </div>
-
     </div>
+
+</div>
 </div>
 
 <script>
-var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
+    var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
     var Esri_WorldImagery = L.tileLayer(
-      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
     );
 
-    var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
         maxZoom: 20,
-        subdomains:['mt0','mt1','mt2','mt3']
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
 
-    var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
         maxZoom: 20,
-        subdomains:['mt0','mt1','mt2','mt3']
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     });
-    var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
         maxZoom: 20,
-        subdomains:['mt0','mt1','mt2','mt3']});
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
 
-        var baseLayers = {
-      "Google Roadmap": googleStreets,
-      "Google Hybrid": googleHybrid ,
-      "Google Satellite": googleSat,
-      "Open Street Map": osm,
-      "ESRI World Imagery": Esri_WorldImagery,
+    var baseLayers = {
+        "Google Roadmap": googleStreets,
+        "Google Hybrid": googleHybrid,
+        "Google Satellite": googleSat,
+        "Open Street Map": osm,
+        "ESRI World Imagery": Esri_WorldImagery,
     };
 
 
@@ -151,14 +187,15 @@ var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
         fullscreenControlOptions: {
             position: 'topleft'
         },
-        layers: [googleSat, pju,meteran]
+        layers: [googleSat, pju, meteran]
     });
     var groupedOverlays = {
         "Peta PJU": {
-          "&nbsp;&nbsp;&nbsp;&nbsp;PJU": pju,
-          "&nbsp;&nbsp;&nbsp;&nbsp;Meteran": meteran,
+            "&nbsp;&nbsp;&nbsp;&nbsp;PJU": pju,
+            "&nbsp;&nbsp;&nbsp;&nbsp;Meteran": meteran,
         },
-      };
+    };
+
     function popup(f, l) {
         var out = [];
         if (f.properties) {
@@ -171,6 +208,7 @@ var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
             l.bindPopup(out.join("<br />"));
         }
     };
+
     function popup_meteran(f, l) {
         var out = [];
         if (f.properties) {
@@ -182,7 +220,8 @@ var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
             l.bindPopup(out.join("<br />"));
         }
     };
-  
-    L.control.groupedLayers(baseLayers,groupedOverlays,{collapsed:false}).addTo(map);
-  
+
+    L.control.groupedLayers(baseLayers, groupedOverlays, {
+        collapsed: false
+    }).addTo(map);
 </script>
