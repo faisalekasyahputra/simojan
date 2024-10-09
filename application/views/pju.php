@@ -98,7 +98,7 @@
 												<b>Jenis Lampu</b> : <?= $pj->Jenis_Bohlam ?> / <b>Letak Tiang</b> : <?= $pj->Letak_Tiang ?> <br>
 												<b>Kondisi Tiang</b> : <?= $pj->Kondisi_Tiang ?> /
 												<b>Jenis Jaringan</b> :<?= $pj->Jenis_Jringan ?><br>
-												<a class="link-underline link-underline-opacity-0" href="<?= base_url('index.php/Welcome/detail/') . $pj->Kode ?>" class="btn btn-sm btn-link p-0 mt-2 btnMap text-danger">
+												<a class="link-underline link-underline-opacity-0 " href="<?= base_url('index.php/Welcome/detail/') . $pj->Kode ?>" class="btn btn-sm btn-link p-0 mt-2 btnMap text-danger">
 													<i class="fa fa-map-marker " aria-hidden="true"></i>
 													Lihat Lokasi (<?= number_format($pj->LAT, 5) ?>, <?= number_format($pj->LONG, 5) ?>)
 												</a>
